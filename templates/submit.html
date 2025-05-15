@@ -1,14 +1,62 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
-    <title>Submit Request</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Отправка запроса</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f9f9f9;
+            color: #333;
+            padding: 40px;
+            max-width: 600px;
+            margin: auto;
+        }
+        h1 {
+            color: #222;
+            text-align: center;
+        }
+        form {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 20px;
+        }
+        input[type="text"], input[type="email"], input[type="file"], textarea {
+            width: 100%;
+            padding: 12px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            background: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            margin-top: 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
 </head>
 <body>
-    <h1>Submit Request</h1>
+    <h1>Отправка запроса</h1>
     <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit">Send</button>
+        <button type="submit">Отправить</button>
     </form>
 </body>
 </html>
