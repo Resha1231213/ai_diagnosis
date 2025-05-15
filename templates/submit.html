@@ -2,49 +2,55 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Отправка запроса</title>
+    <title>Анализ запроса</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
         body {
             font-family: Arial, sans-serif;
             background: #f9f9f9;
-            color: #333;
+            color: #222;
             padding: 40px;
-            max-width: 600px;
+            max-width: 700px;
             margin: auto;
         }
         h1 {
-            color: #222;
             text-align: center;
+            margin-bottom: 40px;
         }
         form {
             background: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
         }
         label {
-            font-weight: bold;
             display: block;
             margin-top: 20px;
+            font-weight: bold;
+            font-size: 14px;
         }
-        input[type="text"], input[type="email"], input[type="file"], textarea {
+        input[type="text"],
+        input[type="email"],
+        input[type="file"],
+        textarea {
             width: 100%;
             padding: 12px;
-            margin-top: 5px;
-            border-radius: 5px;
+            margin-top: 6px;
             border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 15px;
         }
         button {
-            background: #4CAF50;
-            color: white;
-            padding: 12px 20px;
-            margin-top: 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
+            display: block;
             width: 100%;
+            margin-top: 30px;
+            padding: 14px;
+            background-color: #4CAF50;
+            color: white;
             font-size: 16px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
         }
         button:hover {
             background-color: #45a049;
@@ -52,7 +58,7 @@
     </style>
 </head>
 <body>
-    <h1>Отправка запроса</h1>
+    <h1>Загрузка и анализ запроса</h1>
     <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form.as_p }}
